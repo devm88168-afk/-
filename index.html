@@ -1,0 +1,2655 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#8b2e16">
+  <meta name="description" content="पवनसुत सेवा संस्थान — समाज सेवा, आध्यात्मिक आयोजन, श्रीमद्भागवत कथा और जरूरतमंदों की सहायता के लिए समर्पित।">
+  
+  <!-- Social Media Preview (Open Graph) Meta Tags -->
+  <meta property="og:title" content="पवनसुत सेवा संस्थान | सेवा ही संकल्प">
+  <meta property="og:description" content="समाज सेवा, आध्यात्मिक आयोजन, श्रीमद्भागवत कथा और जरूरतमंदों की सहायता के लिए समर्पित।">
+  <meta property="og:image" content="Pavansut Seva Emblem.png">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/png" href="Pavansut Seva Emblem.png">
+  <title>पवनसुत सेवा संस्थान | सेवा ही संकल्प</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       CSS STYLES - PAVANSUT SEVA SANSTHAN
+       ========================================================================== */
+    :root {
+      --primary: #8b2e16;
+      --primary-dark: #641f0d;
+      --accent: #d97706;
+      --accent-light: #fef3c7;
+      --bg-main: #fdfbf7;
+      --bg-card: #ffffff;
+      --bg-alt: #f4eee5;
+      --text-main: #2b231d;
+      --text-muted: #6e6259;
+      --text-light: #faf6f0;
+      --border: #e7ded2;
+      --shadow-sm: 0 2px 8px rgba(139, 46, 22, 0.06);
+      --shadow-md: 0 8px 24px rgba(139, 46, 22, 0.1);
+      --shadow-lg: 0 16px 40px rgba(139, 46, 22, 0.14);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 24px;
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Hind', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body.menu-open,
+    body.dialog-open {
+      overflow: hidden;
+    }
+
+    h1, h2, h3, h4, em {
+      font-family: 'Playfair Display', serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Accessibility Skip Link */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      background: var(--primary);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      z-index: 9999;
+      transition: top 0.2s;
+      border-radius: var(--radius-sm);
+    }
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    /* Announcement Bar */
+    .announcement-bar {
+      background: var(--primary-dark);
+      color: var(--text-light);
+      font-size: 0.875rem;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .announcement-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .announcement-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: var(--accent);
+      border-radius: 50%;
+      margin-right: 6px;
+    }
+    .announcement-links {
+      display: flex;
+      gap: 1.25rem;
+    }
+    .announcement-links a:hover {
+      color: var(--accent);
+    }
+
+    /* Site Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      background: rgba(253, 251, 247, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      border-bottom: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    .site-header.is-scrolled {
+      box-shadow: var(--shadow-sm);
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 76px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+    }
+    .brand-copy strong {
+      display: block;
+      font-size: 1.25rem;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+    .brand-copy small {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Navigation */
+    .primary-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-weight: 500;
+    }
+    .primary-nav a:not(.nav-donate) {
+      position: relative;
+      padding: 0.25rem 0;
+      transition: color 0.2s;
+    }
+    .primary-nav a:not(.nav-donate)::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.3s;
+    }
+    .primary-nav a:not(.nav-donate):hover::after {
+      width: 100%;
+    }
+    .nav-donate {
+      background: var(--primary);
+      color: #fff !important;
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      transition: var(--transition);
+    }
+    .nav-donate:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      width: 100%;
+      height: 3px;
+      background-color: var(--primary);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, rgba(139, 46, 22, 0.95), rgba(100, 31, 13, 0.9)), url('Pavansut Seva Emblem.png') center/cover no-repeat;
+      color: #fff;
+      padding: 6rem 0 5rem;
+      overflow: hidden;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent-light);
+      margin-bottom: 1rem;
+    }
+    .eyebrow-dark {
+      color: var(--primary);
+      font-weight: 600;
+    }
+    .eyebrow-line {
+      width: 30px;
+      height: 2px;
+      background: currentColor;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 em {
+      color: var(--accent-light);
+      font-style: italic;
+    }
+    .hero-description {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2rem;
+      max-width: 650px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .hero-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.875rem;
+    }
+    .hero-bottom {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      margin-top: 3rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 1.5rem;
+      font-size: 1.1rem;
+      color: var(--accent-light);
+    }
+    .hero-bottom i {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      opacity: 0.8;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.75rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-primary {
+      background-color: var(--accent);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background-color: #b45309;
+      transform: translateY(-2px);
+    }
+    .btn-glass {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+    .btn-glass:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+    .btn-light {
+      background: #fff;
+      color: var(--primary);
+    }
+    .btn-light:hover {
+      background: var(--bg-main);
+      transform: translateY(-2px);
+    }
+    .btn-full {
+      width: 100%;
+    }
+
+    /* Trust Strip */
+    .trust-strip {
+      background: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      padding: 1.5rem 0;
+    }
+    .trust-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .trust-strip-grid > div {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .strip-icon {
+      font-size: 1.75rem;
+      color: var(--primary);
+    }
+    .trust-strip-grid strong {
+      display: block;
+      color: var(--primary-dark);
+    }
+    .trust-strip-grid small {
+      color: var(--text-muted);
+    }
+
+    /* Sections */
+    .section {
+      padding: 5rem 0;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+    }
+    .section-title em {
+      color: var(--accent);
+    }
+    .section-heading-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .heading-aside {
+      max-width: 400px;
+      color: var(--text-muted);
+    }
+
+    /* About Section */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .about-visual {
+      position: relative;
+    }
+    .about-image {
+      position: relative;
+      height: 400px;
+      background: linear-gradient(45deg, var(--primary), var(--accent));
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: flex-end;
+      padding: 2rem;
+      color: #fff;
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+    .about-image .about-bg-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+    .about-image::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+    .image-badge {
+      position: relative;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(10px);
+      padding: 1rem 1.5rem;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .image-badge span {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--accent-light);
+    }
+    .about-stamp {
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      width: 90px;
+      height: 90px;
+      background: var(--bg-main);
+      border: 2px dashed var(--primary);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .lead {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    /* 5 Members Section Styles */
+    .members-section {
+      background: var(--bg-main);
+      padding: 5rem 0;
+      border-top: 1px solid var(--border);
+    }
+    .members-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .member-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 2rem 1.25rem;
+      text-align: center;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .member-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent);
+    }
+    .member-avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-light), var(--bg-alt));
+      border: 3px solid var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .member-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 50%;
+      display: block;
+    }
+    .member-role {
+      display: inline-block;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      background: var(--accent-light);
+      color: var(--primary-dark);
+      padding: 0.3rem 0.8rem;
+      border-radius: 50px;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .member-card h3 {
+      font-size: 1.25rem;
+      color: var(--primary-dark);
+      margin-bottom: 0.25rem;
+    }
+    .member-card p {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    /* QR Codes Section Styles */
+    .qr-section {
+      background: var(--bg-alt);
+      padding: 4rem 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .qr-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 800px;
+      margin: 2.5rem auto 0;
+    }
+    .qr-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .qr-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+    }
+    .qr-card-header {
+      margin-bottom: 1.25rem;
+    }
+    .qr-card-header h3 {
+      color: var(--primary-dark);
+      font-size: 1.35rem;
+    }
+    .qr-card-header p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .qr-box {
+      background: #fff;
+      padding: 1rem;
+      border: 2px dashed var(--accent);
+      border-radius: var(--radius-md);
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    .qr-box img {
+      width: 170px;
+      height: 170px;
+      object-fit: contain;
+    }
+    .qr-details {
+      font-size: 0.95rem;
+      color: var(--text-main);
+      background: var(--bg-main);
+      padding: 0.6rem 1rem;
+      border-radius: var(--radius-sm);
+      word-break: break-all;
+      display: inline-block;
+      margin-bottom: 0.75rem;
+      border: 1px solid var(--border);
+    }
+    .qr-actions {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    /* Values Grid */
+    .values-section {
+      background: var(--bg-alt);
+      padding: 4rem 0;
+    }
+    .centered {
+      text-align: center;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .value-card {
+      background: var(--bg-card);
+      padding: 2rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      text-align: center;
+      transition: var(--transition);
+    }
+    .value-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-sm);
+    }
+    .value-icon {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    /* Seva Grid */
+    .seva-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+    .seva-card {
+      background: var(--bg-card);
+      padding: 2.5rem 2rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: var(--transition);
+    }
+    .seva-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent);
+    }
+    .seva-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--bg-alt);
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-weight: 700;
+    }
+    .seva-symbol {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .seva-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+      color: var(--primary-dark);
+    }
+    .seva-card p {
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+    .card-link {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* Quote Band */
+    .quote-band {
+      background: var(--primary-dark);
+      color: var(--text-light);
+      padding: 4rem 0;
+      text-align: center;
+    }
+    .quote-mark {
+      font-size: 4rem;
+      line-height: 1;
+      color: var(--accent);
+      font-family: 'Playfair Display', serif;
+    }
+    .quote-band blockquote {
+      font-size: 2.25rem;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Events Layout */
+    .events-layout {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 2rem;
+    }
+    .event-feature {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .event-art {
+      position: relative;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      padding: 3.5rem 2rem;
+      text-align: center;
+      overflow: hidden;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .event-art .event-art-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+    .event-art::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(139, 46, 22, 0.78), rgba(44, 24, 16, 0.85));
+      z-index: 1;
+      pointer-events: none;
+    }
+    .event-art-content {
+      position: relative;
+      z-index: 2;
+    }
+    .event-art-center span {
+      display: block;
+      font-size: 1.2rem;
+      color: var(--accent-light);
+    }
+    .event-art-center strong {
+      font-size: 2.5rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .event-info {
+      padding: 2rem;
+    }
+    .mini-event {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .event-contact-card {
+      background: var(--accent-light);
+      border: 1px dashed var(--accent);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    /* Guide Section */
+    .guide-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .guide-art {
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px dashed var(--border);
+    }
+    .guide-art-inner {
+      text-align: center;
+    }
+    .guide-om {
+      font-size: 4rem;
+      color: var(--primary);
+      display: block;
+    }
+
+    /* Gallery Grid & Album Tiles */
+    .gallery-section {
+      background: linear-gradient(180deg, var(--bg-main) 0%, var(--bg-alt) 100%);
+      border-top: 1px solid var(--border);
+    }
+    .gallery-section .section-heading {
+      margin-bottom: 3rem;
+    }
+    .gallery-section .section-heading::after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 3px;
+      margin: 1.25rem auto 0;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      border-radius: 3px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    @media (max-width: 1000px) {
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    }
+    @media (max-width: 640px) {
+      .gallery-grid { grid-template-columns: 1fr; max-width: 420px; }
+    }
+    .gallery-tile {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      text-align: left;
+      padding: 0;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+      width: 100%;
+      outline: none;
+    }
+    .gallery-tile:hover, .gallery-tile:focus-visible {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 28px rgba(139, 46, 22, 0.14);
+      border-color: var(--accent);
+    }
+    .gallery-tile-img-box {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: #f7f4ef;
+      position: relative;
+    }
+    .gallery-tile-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      display: block;
+    }
+    .gallery-tile:hover .gallery-tile-img {
+      transform: scale(1.08);
+    }
+    .gallery-tile-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(18, 12, 10, 0.78);
+      backdrop-filter: blur(6px);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      z-index: 2;
+    }
+    .gallery-tile-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(18, 12, 10, 0.65) 0%, rgba(18, 12, 10, 0.1) 60%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem;
+      z-index: 1;
+    }
+    .gallery-tile:hover .gallery-tile-overlay {
+      opacity: 1;
+    }
+    .gallery-tile-overlay span {
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(139, 46, 22, 0.9);
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .gallery-tile-info {
+      padding: 1.1rem 1.15rem;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      flex-grow: 1;
+    }
+    .gallery-tile-info strong {
+      font-size: 1.12rem;
+      color: var(--primary-dark);
+      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+    }
+    .gallery-tile-info p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .gallery-tile-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 0.65rem;
+      border-top: 1px dashed var(--border);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      transition: color 0.2s ease;
+    }
+    .gallery-tile:hover .gallery-tile-footer {
+      color: var(--accent);
+    }
+    .gallery-tile-footer span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .gallery-note {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+    .gallery-tile-info p {
+      min-height: 2.6em;
+    }
+
+    /* Youtube Strip */
+    .youtube-section {
+      background: #c4302b;
+      color: #fff;
+      padding: 3rem 0;
+    }
+    .youtube-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .youtube-icon {
+      font-size: 3rem;
+    }
+
+    /* Support Section */
+    .support-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    .support-card {
+      background: var(--bg-card);
+      padding: 2.5rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+    }
+    .support-choices {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 0.75rem;
+      margin: 1.5rem 0;
+    }
+    .support-choice {
+      padding: 1rem 0.5rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg-main);
+      cursor: pointer;
+      text-align: center;
+      transition: var(--transition);
+    }
+    .support-choice.active, .support-choice:hover {
+      border-color: var(--primary);
+      background: var(--accent-light);
+    }
+    .support-choice span {
+      display: block;
+      font-size: 1.25rem;
+      margin-bottom: 0.25rem;
+    }
+
+    /* FAQ Details */
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+    }
+    .faq-list details {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      margin-bottom: 1rem;
+      padding: 1.1rem 1.25rem;
+      transition: var(--transition);
+    }
+    .faq-list details[open] {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-sm);
+    }
+    .faq-list summary {
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      user-select: none;
+    }
+    .faq-list summary::-webkit-details-marker {
+      display: none;
+    }
+    .faq-list summary span {
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--primary);
+      transition: transform 0.25s ease;
+      line-height: 1;
+    }
+    .faq-list details[open] summary span {
+      transform: rotate(45deg);
+    }
+    .faq-list details p {
+      margin-top: 0.75rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: var(--bg-alt);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
+    }
+    .contact-method {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+    .contact-method-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-form {
+      background: var(--bg-card);
+      padding: 2.5rem;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border);
+    }
+    .form-row {
+      margin-bottom: 1.25rem;
+    }
+    .form-row label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 500;
+    }
+    .form-row input, .form-row select, .form-row textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+    }
+    .consent-check {
+      display: flex;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+    .form-error {
+      color: #dc2626;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Site Footer */
+    .site-footer {
+      background: var(--primary-dark);
+      color: var(--text-light);
+      padding: 4rem 0 0;
+    }
+    .footer-main {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 2.5rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .footer-links h3 {
+      font-size: 1.1rem;
+      color: var(--accent-light);
+      margin-bottom: 0.5rem;
+    }
+    .footer-bottom {
+      padding: 1.5rem 0;
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .footer-bottom-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Floating Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 44px;
+      height: 44px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      box-shadow: var(--shadow-md);
+      z-index: 900;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--text-main);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      box-shadow: var(--shadow-lg);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 10000;
+    }
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Dialog Modal - Multi-Photo Lightbox */
+    dialog.gallery-dialog:not([open]) {
+      display: none !important;
+    }
+    dialog.gallery-dialog[open] {
+      display: flex !important;
+      flex-direction: column;
+    }
+    .gallery-dialog {
+      position: fixed;
+      inset: 0;
+      margin: auto;
+      padding: 1.25rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+      max-width: 860px;
+      width: 95%;
+      max-height: 94vh;
+      background: #ffffff;
+      color: var(--text-main);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      z-index: 99999;
+    }
+    .gallery-dialog::backdrop {
+      background: rgba(18, 12, 10, 0.85);
+      backdrop-filter: blur(8px);
+    }
+    .dialog-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 0.85rem;
+      gap: 0.75rem;
+    }
+    .dialog-header-info {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+    .dialog-album-badge {
+      background: var(--accent-light);
+      color: var(--primary-dark);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid rgba(217, 119, 6, 0.3);
+    }
+    .dialog-album-title {
+      font-size: 1.25rem;
+      color: var(--primary-dark);
+      margin: 0;
+      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+    }
+    .dialog-counter {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      background: var(--bg-alt);
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-weight: 600;
+      border: 1px solid var(--border);
+    }
+    .dialog-close {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--bg-alt);
+      border: none;
+      font-size: 1.35rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-main);
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+    .dialog-close:hover {
+      background: var(--primary);
+      color: #fff;
+      transform: rotate(90deg);
+    }
+    .dialog-stage {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      background: #0f0a08;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      min-height: 280px;
+      max-height: 52vh;
+    }
+    .dialog-img-box {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 280px;
+      max-height: 52vh;
+    }
+    .dialog-img-box img {
+      max-width: 100%;
+      max-height: 52vh;
+      object-fit: contain;
+      display: block;
+      transition: opacity 0.2s ease;
+    }
+    .gallery-nav-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      border: none;
+      color: var(--primary-dark);
+      font-size: 1.4rem;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+      transition: all 0.2s ease;
+      z-index: 5;
+    }
+    .gallery-nav-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      transform: translateY(-50%) scale(1.1);
+    }
+    .gallery-nav-btn.prev-btn { left: 0.75rem; }
+    .gallery-nav-btn.next-btn { right: 0.75rem; }
+    .gallery-nav-btn:disabled {
+      opacity: 0.25;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    .dialog-meta {
+      padding: 0.75rem 0.25rem 0.35rem;
+      text-align: left;
+    }
+    .dialog-photo-title {
+      font-size: 1.05rem;
+      color: var(--primary-dark);
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+    .dialog-desc {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .dialog-thumbnails-wrapper {
+      overflow-x: auto;
+      padding: 0.5rem 0.1rem;
+      margin: 0.4rem 0 0.5rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      scrollbar-width: thin;
+    }
+    .dialog-thumbnails {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .dialog-thumb-btn {
+      width: 66px;
+      height: 52px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      padding: 0;
+      cursor: pointer;
+      background: #000;
+      opacity: 0.55;
+      transition: all 0.2s ease;
+    }
+    .dialog-thumb-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+    .dialog-thumb-btn.is-active {
+      opacity: 1;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.4);
+      transform: scale(1.04);
+    }
+    .dialog-thumb-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .dialog-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0.6rem;
+      margin-top: 0.2rem;
+    }
+    .dialog-hint {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    @media (max-width: 600px) {
+      .gallery-dialog {
+        padding: 0.85rem;
+        max-height: 96vh;
+      }
+      .dialog-stage {
+        min-height: 220px;
+        max-height: 42vh;
+      }
+      .dialog-img-box {
+        min-height: 220px;
+        max-height: 42vh;
+      }
+      .dialog-img-box img {
+        max-height: 42vh;
+      }
+      .gallery-nav-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1.15rem;
+      }
+      .gallery-nav-btn.prev-btn { left: 0.4rem; }
+      .gallery-nav-btn.next-btn { right: 0.4rem; }
+      .dialog-thumb-btn {
+        width: 52px;
+        height: 42px;
+      }
+      .dialog-hint {
+        display: none;
+      }
+    }
+
+    /* RESPONSIVE DESIGN (MOBILE ADAPTATION) */
+    @media (max-width: 900px) {
+      .menu-toggle {
+        display: flex;
+      }
+      .menu-toggle.is-active span:nth-child(1) {
+        transform: translateY(8.5px) rotate(45deg);
+      }
+      .menu-toggle.is-active span:nth-child(2) {
+        opacity: 0;
+      }
+      .menu-toggle.is-active span:nth-child(3) {
+        transform: translateY(-8.5px) rotate(-45deg);
+      }
+      .primary-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-main);
+        flex-direction: column;
+        padding: 1.5rem 2rem;
+        gap: 1.25rem;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow-md);
+        display: none;
+        max-height: calc(100vh - 80px);
+        overflow-y: auto;
+      }
+      .primary-nav.is-open {
+        display: flex;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .about-grid, .events-layout, .guide-grid, .support-grid, .faq-layout, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-main {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 600px) {
+      .footer-main {
+        grid-template-columns: 1fr;
+      }
+      .hero-actions {
+        flex-direction: column;
+      }
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">मुख्य सामग्री पर जाएँ</a>
+  
+  <div class="announcement-bar">
+    <div class="container announcement-inner">
+      <span><span class="announcement-dot"></span> सेवा, संस्कार और समर्पण</span>
+      <div class="announcement-links">
+        <a href="tel:+919096757393" aria-label="फोन करें">☎ +91 90967 57393</a>
+        <a href="https://www.youtube.com/@pavanaut_seva_sansthan" target="_blank" rel="noopener noreferrer">▶ YouTube चैनल</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="पवनसुत सेवा संस्थान होम">
+        <img src="Pavansut Seva Emblem.png" alt="पवनसुत सेवा संस्थान का लोगो" class="brand-logo">
+        <span class="brand-copy">
+          <strong>पवनसुत सेवा संस्थान</strong>
+          <small>सेवा ही संकल्प · श्रद्धा ही शक्ति</small>
+        </span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="मेन्यू खोलें">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="primary-nav" id="primaryNav" aria-label="मुख्य नेविगेशन">
+        <a href="#home">होम</a>
+        <a href="#about">हमारे बारे में</a>
+        <a href="#members">पदाधिकारी</a>
+        <a href="#seva">सेवा कार्य</a>
+        <a href="#events">आयोजन</a>
+        <a href="#gallery">गैलरी</a>
+        <a href="#contact">संपर्क</a>
+        <a class="nav-donate" href="#support">सहयोग करें <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <p class="eyebrow"><span class="eyebrow-line"></span> समाज सेवा और आध्यात्मिक समर्पण</p>
+        <h1>जहाँ सेवा है,<br><em>वहीं सच्ची साधना है।</em></h1>
+        <p class="hero-description">पवनसुत सेवा संस्थान जरूरतमंदों की सहायता, आध्यात्मिक जागरण और भारतीय संस्कारों के प्रसार के लिए समर्पित एक सामाजिक एवं धार्मिक पहल है।</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#seva">हमारे सेवा कार्य <span>→</span></a>
+          <a class="btn btn-glass" href="#events">आयोजन देखें</a>
+        </div>
+        <div class="hero-note"><span class="note-icon">✦</span><span>तन, मन और धन से जनसेवा का संकल्प</span></div>
+      </div>
+      <div class="hero-bottom">
+        <span>करुणा</span><i></i><span>सेवा</span><i></i><span>संस्कार</span>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="संस्थान की विशेषताएँ">
+      <div class="container trust-strip-grid">
+        <div><span class="strip-icon">♡</span><span><strong>मानव सेवा</strong><small>जरूरतमंदों के साथ</small></span></div>
+        <div><span class="strip-icon">ॐ</span><span><strong>आध्यात्मिक आयोजन</strong><small>कथा, ज्ञान यज्ञ और उत्सव</small></span></div>
+        <div><span class="strip-icon">✺</span><span><strong>संस्कृति संरक्षण</strong><small>मूल्यों और संस्कारों का प्रसार</small></span></div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="container about-grid">
+        <div class="about-visual">
+          <div class="about-image" role="img" aria-label="संस्थान सेवा दृश्य">
+            <!-- यहाँ अपनी इच्छानुसार फोटो का नाम बदल सकते हैं (उदा. p2.jpeg या कोई अन्य फोटो) -->
+            <img src="PS Offise.jpeg" alt="हमारी प्रेरणा - संस्थान सेवा" class="about-bg-img">
+            <div class="image-badge">
+              <span>॥ श्री हनुमते नमः ॥</span>
+              <strong>सेवा परम धर्म</strong>
+            </div>
+          </div>
+          <div class="about-stamp"><img src="Pavansut Seva Emblem.png" alt="<span>PS</span><small>सेवा<br>संस्थान</small>"></div>
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow eyebrow-dark">हमारी प्रेरणा</p>
+          <h2 class="section-title">सेवा से समाज,<br><em>श्रद्धा से जीवन।</em></h2>
+          <p class="lead">पवनसुत सेवा संस्थान का उद्देश्य समाज के जरूरतमंद व्यक्तियों की यथासंभव सहायता करना और आध्यात्मिक आयोजनों के माध्यम से सद्भाव, ज्ञान तथा सकारात्मकता को बढ़ावा देना है।</p>
+          <p>हम मानते हैं कि छोटी-सी मदद भी किसी के जीवन में बड़ा परिवर्तन ला सकती है। समाज के सहयोग से सेवा कार्यों, धार्मिक आयोजनों और सांस्कृतिक गतिविधियों को आगे बढ़ाना हमारा संकल्प है।</p>
+          <br>
+          <a class="btn btn-primary" href="#contact">संस्थान से जुड़ें <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Members Section -->
+    <section class="section members-section" id="members">
+      <div class="container">
+        <div class="section-heading centered">
+          <p class="eyebrow eyebrow-dark">संस्थान के स्तम्भ</p>
+          <h2 class="section-title">संस्थान के <em>मुख्य पदाधिकारी</em></h2>
+          <p class="heading-aside" style="margin: 0.5rem auto 0; text-align: center;">समर्पण, सेवा और निष्ठा से समाज निर्माण में तत्पर हमारी कार्यकारिणी</p>
+        </div>
+        <div class="members-grid">
+          <!-- 1. प्रेरणास्रोत जी -->
+          <article class="member-card">
+            <div class="member-avatar">
+              <img src="s.jpeg" alt="प्रेरणास्रोत जी">
+            </div>
+            <span class="member-role">प्रेरणास्रोत (Inspiration)</span>
+            <h3>श्री प्रेरणास्रोत जी</h3>
+            <p>मार्गदर्शन व आशीर्वाद</p>
+          </article>
+
+          <!-- 2. संस्थापक जी -->
+          <article class="member-card">
+            <div class="member-avatar">
+              <img src="p.jpeg" alt="संस्थापक जी">
+            </div>
+            <span class="member-role">संस्थापक (Founder)</span>
+            <h3>श्री संस्थापक जी</h3>
+            <p>संस्थान के प्रणेता</p>
+          </article>
+
+          <!-- 3. उपाध्यक्ष जी -->
+          <article class="member-card">
+            <div class="member-avatar">
+              <img src="WhatsApp Image 2026-10-31 at 11.14.50 PM.jpeg" alt="उपाध्यक्ष जी">
+            </div>
+            <span class="member-role">उपाध्यक्ष (Vice President)</span>
+            <h3>श्री उपाध्यक्ष जी</h3>
+            <p>सेवा कार्य व्यवस्थापक</p>
+          </article>
+
+          <!-- 4. सचिव जी -->
+          <article class="member-card">
+            <div class="member-avatar">
+              <img src="k.jpeg" alt="सचिव जी">
+            </div>
+            <span class="member-role">सचिव (Secretary)</span>
+            <h3>श्री सचिव जी</h3>
+            <p>प्रबंधन एवं संचालन</p>
+          </article>
+
+          <!-- 5. कोषाध्यक्ष जी -->
+          <article class="member-card">
+            <div class="member-avatar">
+              <img src="sa.jpeg" alt="कोषाध्यक्ष जी">
+            </div>
+            <span class="member-role">कोषाध्यक्ष (Treasurer)</span>
+            <h3>श्री कोषाध्यक्ष जी</h3>
+            <p>वित्तीय संरक्षक</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="values-section">
+      <div class="container">
+        <div class="section-heading centered">
+          <p class="eyebrow eyebrow-dark">हमारे मूल मूल्य</p>
+          <h2 class="section-title">हमारे हर कदम की <em>प्रेरणा</em></h2>
+        </div>
+        <div class="values-grid">
+          <article class="value-card"><div class="value-icon">♡</div><h3>करुणा</h3><p>हर व्यक्ति के प्रति संवेदना और सम्मान का भाव।</p></article>
+          <article class="value-card"><div class="value-icon">✧</div><h3>निष्काम सेवा</h3><p>बिना भेदभाव के जरूरतमंदों तक सहायता पहुँचाने का प्रयास।</p></article>
+          <article class="value-card"><div class="value-icon">ॐ</div><h3>आध्यात्मिकता</h3><p>कथा, सत्संग और ज्ञान के माध्यम से सकारात्मक जीवन-दृष्टि।</p></article>
+          <article class="value-card"><div class="value-icon">❋</div><h3>सामूहिक सहयोग</h3><p>समाज के लोगों को एक उद्देश्य के लिए साथ जोड़ना।</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section seva-section" id="seva">
+      <div class="container">
+        <div class="section-heading section-heading-row">
+          <div>
+            <p class="eyebrow eyebrow-dark">हम क्या करते हैं</p>
+            <h2 class="section-title">सेवा के <em>विभिन्न आयाम</em></h2>
+          </div>
+          <p class="heading-aside">हर पहल का केंद्र है—मानवता, सद्भाव और जरूरतमंदों के साथ खड़े रहने का संकल्प।</p>
+        </div>
+        <div class="seva-grid">
+          <article class="seva-card">
+            <div class="seva-number">01</div>
+            <div class="seva-symbol">♥</div>
+            <h3>समाज सेवा</h3>
+            <p>जरूरतमंद व्यक्तियों की परिस्थिति के अनुसार यथासंभव सहायता और सहयोग के लिए समाज को प्रेरित करना।</p>
+            <a href="#contact" class="card-link">सहयोग का तरीका जानें <span>↗</span></a>
+          </article>
+          <article class="seva-card">
+            <div class="seva-number">02</div>
+            <div class="seva-symbol">ॐ</div>
+            <h3>कथा</h3>
+            <p>भक्ति, ज्ञान और जीवन-मूल्यों से जुड़े आध्यात्मिक आयोजनों को प्रोत्साहित करना।</p>
+            <a href="#events" class="card-link">आयोजन देखें <span>↗</span></a>
+          </article>
+          <article class="seva-card">
+            <div class="seva-number">03</div>
+            <div class="seva-symbol">✺</div>
+            <h3>ज्ञान यज्ञ व सत्संग</h3>
+            <p>आध्यात्मिक संवाद और सत्संग के माध्यम से ज्ञान, सद्भाव और संस्कारों का प्रसार।</p>
+            <a href="#events" class="card-link">कार्यक्रम जानकारी <span>↗</span></a>
+          </article>
+          <article class="seva-card">
+            <div class="seva-number">04</div>
+            <div class="seva-symbol">♢</div>
+            <h3>धार्मिक उत्सव</h3>
+            <p>समुदाय को जोड़ने वाले धार्मिक एवं सांस्कृतिक आयोजनों में सहभागिता।</p>
+            <a href="#gallery" class="card-link">गैलरी देखें <span>↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-band">
+      <div class="container quote-content">
+        <span class="quote-mark">“</span>
+        <blockquote>नर सेवा ही नारायण सेवा है।</blockquote>
+        <p>आइए, मिलकर सेवा और सद्भाव की भावना को आगे बढ़ाएँ।</p>
+      </div>
+    </section>
+
+    <section class="section events-section" id="events">
+      <div class="container">
+        <div class="section-heading section-heading-row">
+          <div>
+            <p class="eyebrow eyebrow-dark">भक्ति और ज्ञान</p>
+            <h2 class="section-title">आध्यात्मिक <em>आयोजन</em></h2>
+          </div>
+          <p class="heading-aside">कथा, ज्ञान यज्ञ और धार्मिक उत्सव समुदाय को जोड़ने का अवसर हैं।</p>
+        </div>
+        <div class="events-layout">
+          <div class="event-feature">
+            <div class="event-art">
+              <!-- यहाँ आध्यात्मिक आयोजन की फोटो सेट है (उदा. gallery/1.jpeg या अपनी फोटो का नाम बदल सकते हैं) -->
+              <img src="gallery/1_आध्यात्मिक_आयोजन/आध्यात्मिक आयोजन.jpeg" alt="आध्यात्मिक आयोजन - कथा" class="event-art-img">
+              <div class="event-art-content">
+                <span>श्रद्धा · भक्ति · ज्ञान</span>
+                <div class="event-art-center">
+                  <span>श्रीमद्भागवत</span>
+                  <strong>कथा</strong>
+                </div>
+              </div>
+            </div>
+            <div class="event-info">
+              <span class="event-type">प्रमुख आध्यात्मिक आयोजन</span>
+              <h3>कथा</h3>
+              <p>संस्थान से जुड़ी कथा-परंपरा में श्री प्रवेशाचार्य महाराज जी कथा व्यास के रूप में कथावाचन करते हैं।</p>
+              <br>
+              <a class="btn btn-primary" href="tel:+919096757393">कार्यक्रम की जानकारी लें <span>→</span></a>
+            </div>
+          </div>
+          <div class="event-side">
+            <article class="mini-event">
+              <div class="mini-event-icon">✧</div>
+              <div>
+                <span>आध्यात्मिक कार्यक्रम</span>
+                <h3>ज्ञान यज्ञ एवं सत्संग</h3>
+              </div>
+            </article>
+            <article class="mini-event">
+              <div class="mini-event-icon">🪔</div>
+              <div>
+                <span>धार्मिक-सांस्कृतिक</span>
+                <h3>धार्मिक उत्सव</h3>
+              </div>
+            </article>
+            <div class="event-contact-card">
+              <span class="event-contact-icon">☎</span>
+              <div>
+                <strong>आयोजन में शामिल होना चाहते हैं?</strong>
+                <p><a href="tel:+919096757393">+91 90967 57393</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section guide-section">
+      <div class="container guide-grid">
+        <div class="guide-copy">
+          <p class="eyebrow eyebrow-dark">कथा व्यास</p>
+          <h2 class="section-title">श्री प्रवेशाचार्य जी महाराज<br><em>(प्रवेश मिश्रा)</em></h2>
+          <p class="lead">आध्यात्मिक आयोजनों में कथा-वाचन और भक्ति-ज्ञान के संदेश के माध्यम से श्रद्धालुओं को जोड़ने वाली प्रमुख उपस्थिति।</p>
+          <a class="btn btn-primary" href="https://www.youtube.com/@pavanaut_seva_sansthan" target="_blank" rel="noopener noreferrer">कथा वीडियो देखें <span>↗</span></a>
+        </div>
+        <div class="guide-art" style="overflow: hidden; padding: 0;">
+  <img src="p2.jpeg" alt="श्री प्रवेशाचार्य जी महाराज" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-lg);">
+</div>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="gallery">
+      <div class="container">
+        <div class="section-heading centered">
+          <p class="eyebrow eyebrow-dark">यादों के पल</p>
+          <h2 class="section-title">सेवा और भक्ति की <em>झलकियाँ</em></h2>
+        </div>
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- Album 1: आध्यात्मिक आयोजन -->
+          <div class="gallery-tile" data-album-index="0" tabindex="0" role="button" aria-label="आध्यात्मिक आयोजन - फोटो एल्बम खोलें">
+            <div class="gallery-tile-img-box">
+              <img src="gallery/1_आध्यात्मिक_आयोजन/आध्यात्मिक आयोजन.jpeg" alt="आध्यात्मिक आयोजन" class="gallery-tile-img" loading="lazy" onerror="this.onerror=null; this.src='Pavansut Seva Emblem.png';">
+              <span class="gallery-tile-badge">📷 22 फोटो</span>
+              <div class="gallery-tile-overlay">
+                <span>🔍 गैलरी खोलें</span>
+              </div>
+            </div>
+            <div class="gallery-tile-info">
+              <strong>आध्यात्मिक आयोजन</strong>
+              <p>श्रीमद्भागवत कथा, ज्ञान यज्ञ एवं सत्संग के पावन आयोजन।</p>
+              <div class="gallery-tile-footer">
+                <span>गैलरी देखें (22 फोटो)</span>
+                <span>→</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Album 2: सेवा का संकल्प -->
+          <div class="gallery-tile" data-album-index="1" tabindex="0" role="button" aria-label="सेवा का संकल्प - फोटो एल्बम खोलें">
+            <div class="gallery-tile-img-box">
+              <img src="gallery/2_सेवा_का_संकल्प/1 सेवा का संकल्प.jpeg" alt="सेवा का संकल्प" class="gallery-tile-img" loading="lazy" onerror="this.onerror=null; this.src='Pavansut Seva Emblem.png';">
+              <span class="gallery-tile-badge">📷 17 फोटो</span>
+              <div class="gallery-tile-overlay">
+                <span>🔍 गैलरी खोलें</span>
+              </div>
+            </div>
+            <div class="gallery-tile-info">
+              <strong>सेवा का संकल्प</strong>
+              <p>जरूरतमंदों, असहायों और निर्धन परिवारों के लिए सेवा कार्य।</p>
+              <div class="gallery-tile-footer">
+                <span>गैलरी देखें (17 फोटो)</span>
+                <span>→</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Album 3: भक्ति की संध्या -->
+          <div class="gallery-tile" data-album-index="2" tabindex="0" role="button" aria-label="भक्ति की संध्या - फोटो एल्बम खोलें">
+            <div class="gallery-tile-img-box">
+              <img src="gallery/3_भक्ति_की_संध्या/1_भक्ति_की_संध्या.jpeg" alt="भक्ति की संध्या" class="gallery-tile-img" loading="lazy" onerror="this.onerror=null; this.src='gallery/3.jpeg';">
+              <span class="gallery-tile-badge">📷 1 फोटो</span>
+              <div class="gallery-tile-overlay">
+                <span>🔍 गैलरी खोलें</span>
+              </div>
+            </div>
+            <div class="gallery-tile-info">
+              <strong>भक्ति की संध्या</strong>
+              <p>सामूहिक संकीर्तन, सुंदरकांड पाठ और दीप प्रज्ज्वलन के पावन पल।</p>
+              <div class="gallery-tile-footer">
+                <span>गैलरी देखें (1 फोटो)</span>
+                <span>→</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="gallery-note">💡 किसी भी एल्बम पर क्लिक करके उसकी सभी फोटो स्लाइडशो के रूप में देखें।</p>
+      </div>
+    </section>
+
+    <section class="youtube-section">
+      <div class="container youtube-inner">
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <div class="youtube-icon">▶</div>
+          <div>
+            <h2>कथा, भजन और आध्यात्मिक वीडियो</h2>
+            <p>संस्थान के YouTube चैनल पर उपलब्ध वीडियो देखें और भक्ति-ज्ञान से जुड़े रहें।</p>
+          </div>
+        </div>
+        <a class="btn btn-light" href="https://www.youtube.com/@pavanaut_seva_sansthan" target="_blank" rel="noopener noreferrer">YouTube चैनल खोलें <span>↗</span></a>
+      </div>
+    </section>
+
+    <section class="section support-section" id="support">
+      <div class="container support-grid">
+        <div class="support-copy">
+          <p class="eyebrow eyebrow-dark">आपका सहयोग, हमारी शक्ति</p>
+          <h2 class="section-title">सेवा के इस संकल्प में<br><em>भागीदार बनें।</em></h2>
+          <p class="lead">आप अपना समय, कौशल या अन्य उपयुक्त सहयोग देकर सेवा गतिविधियों को आगे बढ़ाने में मदद कर सकते हैं।</p>
+        </div>
+        <div class="support-card">
+          <h3>आप कैसे सहयोग करना चाहेंगे?</h3>
+          <div class="support-choices" role="group" aria-label="सहयोग का प्रकार">
+            <button type="button" class="support-choice active" data-support="volunteer"><span>♡</span><strong>स्वयंसेवा</strong></button>
+            <button type="button" class="support-choice" data-support="materials"><span>♧</span><strong>सामग्री</strong></button>
+            <button type="button" class="support-choice" data-support="event"><span>ॐ</span><strong>आयोजन</strong></button>
+            <button type="button" class="support-choice" data-support="donate"><span>₹</span><strong>आर्थिक सहयोग</strong></button>
+          </div>
+          <a class="btn btn-primary btn-full" id="supportContact" href="https://wa.me/919096757393?text=Namaste%2C%20main%20Pawansut%20Seva%20Sansthan%20ke%20svayamseva%20karya%20mein%20sahyog%20karna%20chahta%2Fchahti%20hoon." target="_blank" rel="noopener noreferrer">संपर्क करके सहयोग करें <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Online Donation & QR Code Section -->
+    <section class="qr-section" id="donate-qr">
+      <div class="container">
+        <div class="section-heading centered">
+          <p class="eyebrow eyebrow-dark">सुरक्षित एवं प्रत्यक्ष दान</p>
+          <h2 class="section-title">ऑनलाइन <em>दान / QR कोड</em></h2>
+          <p style="color: var(--text-muted); max-width: 600px; margin: 0.5rem auto 0;">सेवा और धार्मिक आयोजनों में आर्थिक सहयोग के लिए नीचे दिए गए QR कोड को किसी भी UPI ऐप (GPay, PhonePe, Paytm, BHIM) से स्कैन करें।</p>
+        </div>
+
+        <div class="qr-grid">
+          <!-- QR Card -->
+          <div class="qr-card">
+            <div class="qr-card-header">
+              <h3>पवनसुत सेवा संस्थान</h3>
+              <p>सामान्य सेवा एवं अन्नदान कोष</p>
+            </div>
+            <div class="qr-box">
+              <img src="QR.jpeg" alt="पवनसुत सेवा संस्थान UPI QR कोड" onerror="this.onerror=null; this.src='Pavansut Seva Emblem.png';">
+            </div>
+            <div class="qr-details">
+              <strong>UPI ID:</strong> <span id="upiIdVal">PAWANSUTSEWASANSTHAN@SBI</span>
+            </div>
+            <div class="qr-actions">
+              <button type="button" class="btn btn-primary" id="copyUpiBtn" style="padding: 0.55rem 1.25rem; font-size: 0.9rem;">📋 UPI ID कॉपी करें</button>
+              <a href="upi://pay?pa=9096757393@upi&pn=Pawansut%20Seva%20Sansthan&cu=INR&tn=Pawansut%20Seva%20Sahyog" id="openUpiBtn" class="btn btn-glass" style="padding: 0.55rem 1.25rem; font-size: 0.9rem; background: var(--primary); color: #fff;">📱 UPI ऐप में खोलें</a>
+            </div>
+            <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.4;">
+              💡 <strong>ध्यान दें:</strong> 'UPI ऐप में खोलें' केवल <strong>मोबाइल फोन</strong> (GPay, PhonePe, Paytm) पर कार्य करता है। कंप्यूटर/लैपटॉप पर कृपया मोबाइल से QR कोड स्कैन करें।
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq-section">
+      <div class="container faq-layout">
+        <div>
+          <p class="eyebrow eyebrow-dark">आपके सवाल</p>
+          <h2 class="section-title">अक्सर पूछे जाने वाले <em>प्रश्न</em></h2>
+        </div>
+        <div class="faq-list">
+          <details><summary>पवनसुत सेवा संस्थान का मुख्य उद्देश्य क्या है?<span>+</span></summary><p>संस्थान का मुख्य उद्देश्य जरूरतमंद व्यक्तियों की यथासंभव सहायता करना और सामाजिक सहयोग व आध्यात्मिक गतिविधियों को प्रोत्साहित करना है।</p></details>
+          <details><summary>संस्थान किन क्षेत्रों से जुड़ा है?<span>+</span></summary><p>उपलब्ध जानकारी के अनुसार संस्थान मुंबई, महाराष्ट्र और जौनपुर, उत्तर प्रदेश क्षेत्र से जुड़ा हुआ है।</p></details>
+          <details><summary>मैं संस्थान के सेवा कार्यों में कैसे जुड़ सकता/सकती हूँ?<span>+</span></summary><p>आप स्वयंसेवा, कार्यक्रम सहयोग या उपयोगी सामग्री के माध्यम से जुड़ने की इच्छा बता सकते हैं। संपर्क फ़ॉर्म भरें या सीधे फोन/WhatsApp करें।</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <p class="eyebrow eyebrow-dark">संपर्क करें</p>
+          <h2 class="section-title">आइए, मिलकर<br><em>सेवा का हाथ बढ़ाएँ।</em></h2>
+          <div class="contact-method">
+            <span class="contact-method-icon">☎</span>
+            <div><small>फोन / WhatsApp</small><br><a href="tel:+919096757393"><strong>+91 90967 57393</strong></a></div>
+          </div>
+          <div class="contact-method">
+            <span class="contact-method-icon">⌖</span>
+            <div><small>संबद्ध क्षेत्र</small><br><strong>मुंबई, महाराष्ट्र · जौनपुर, उत्तर प्रदेश</strong></div>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm" novalidate>
+          <h3>अपना संदेश भेजें</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">फ़ॉर्म भरें; आपके डिवाइस पर WhatsApp संदेश तैयार होगा।</p>
+          <div class="form-row">
+            <label for="visitorName">आपका नाम <span>*</span></label>
+            <input id="visitorName" name="name" type="text" placeholder="पूरा नाम" required minlength="2">
+          </div>
+          <div class="form-row">
+            <label for="visitorPhone">मोबाइल नंबर</label>
+            <input id="visitorPhone" name="phone" type="tel" placeholder="जैसे 9876543210">
+          </div>
+          <div class="form-row">
+            <label for="visitorTopic">संपर्क का विषय <span>*</span></label>
+            <select id="visitorTopic" name="topic" required>
+              <option value="">विषय चुनें</option>
+              <option>सेवा कार्य में सहयोग</option>
+              <option>श्रीमद्भागवत कथा / कार्यक्रम</option>
+              <option>स्वयंसेवा</option>
+              <option>सामान्य जानकारी</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="visitorMessage">आपका संदेश <span>*</span></label>
+            <textarea id="visitorMessage" name="message" rows="4" placeholder="कृपया अपना संदेश लिखें..." required minlength="5"></textarea>
+          </div>
+          <label class="consent-check">
+            <input id="privacyConsent" type="checkbox" required>
+            <span>मैं सहमत हूँ कि यह जानकारी WhatsApp संदेश में शामिल की जाए।</span>
+          </label>
+          <p class="form-error" id="formError" role="alert"></p>
+          <button class="btn btn-primary btn-full" type="submit">WhatsApp पर संदेश तैयार करें <span>↗</span></button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div class="footer-brand">
+        <strong>पवनसुत सेवा संस्थान</strong>
+        <p>सेवा ही संकल्प · श्रद्धा ही शक्ति</p>
+      </div>
+      <div class="footer-links">
+        <h3>त्वरित लिंक</h3>
+        <a href="#about">हमारे बारे में</a>
+        <a href="#members">पदाधिकारी</a>
+        <a href="#seva">सेवा कार्य</a>
+        <a href="#events">आयोजन</a>
+      </div>
+      <div class="footer-links">
+        <h3>संपर्क</h3>
+        <a href="tel:+919096757393">+91 90967 57393</a>
+        <a href="https://wa.me/919096757393" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      </div>
+      <div>
+        <p>“सेवा में ही संतोष, समर्पण में ही शक्ति।”</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>© <span id="currentYear">2026</span> पवनसुत सेवा संस्थान। सर्वाधिकार सुरक्षित।</span>
+        <a href="#top" style="color:#fff;">↑ ऊपर जाएँ</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="पेज के ऊपर जाएँ">↑</button>
+  <div class="toast" id="toast" role="status"></div>
+
+  <dialog class="gallery-dialog" id="galleryDialog" aria-labelledby="dialogAlbumTitle" aria-modal="true">
+    <div class="dialog-header">
+      <div class="dialog-header-info">
+        <span class="dialog-album-badge" id="dialogAlbumBadge">🌸 एल्बम</span>
+        <h3 id="dialogAlbumTitle" class="dialog-album-title">आध्यात्मिक आयोजन</h3>
+        <span class="dialog-counter" id="dialogCounter">फोटो 1 / 10</span>
+      </div>
+      <button class="dialog-close" id="dialogClose" aria-label="गैलरी बंद करें" title="बंद करें (Esc)">×</button>
+    </div>
+
+    <div class="dialog-stage">
+      <button class="gallery-nav-btn prev-btn" id="dialogPrev" aria-label="पिछली फोटो" title="पिछली फोटो (◄ Arrow Left)">
+        <span aria-hidden="true">&#10094;</span>
+      </button>
+
+      <div class="dialog-img-box">
+        <img id="dialogImg" src="" alt="गैलरी फोटो" loading="eager" onerror="this.onerror=null; this.src='Pavansut Seva Emblem.png';">
+      </div>
+
+      <button class="gallery-nav-btn next-btn" id="dialogNext" aria-label="अगली फोटो" title="अगली फोटो (► Arrow Right)">
+        <span aria-hidden="true">&#10095;</span>
+      </button>
+    </div>
+
+    <div class="dialog-meta">
+      <h4 id="dialogPhotoTitle" class="dialog-photo-title">फोटो</h4>
+      <p id="dialogDesc" class="dialog-desc">पवनसुत सेवा संस्थान के पावन कार्य एवं गतिविधियाँ।</p>
+    </div>
+
+    <div class="dialog-thumbnails-wrapper">
+      <div class="dialog-thumbnails" id="dialogThumbnails" role="tablist" aria-label="फोटो थंबनेल सूची">
+        <!-- Thumbnails populated dynamically by JavaScript -->
+      </div>
+    </div>
+
+    <div class="dialog-footer">
+      <span class="dialog-hint">💡 कीबोर्ड के ◄ ► बटन से भी फोटो बदल सकते हैं</span>
+      <button class="btn btn-primary btn-sm" id="dialogOk" style="padding: 0.4rem 1.25rem;">बंद करें</button>
+    </div>
+  </dialog>
+
+  <!-- ==========================================================================
+       GALLERY DATA & JAVASCRIPT LOGIC - PAVANSUT SEVA SANSTHAN
+       ========================================================================== -->
+  <script src="gallery/gallery_data.js"></script>
+  <script>
+    "use strict";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      initMobileMenu();
+      initHeaderScroll();
+      initBackToTop();
+      initSupportChoices();
+      initUpiCopy();
+      initUpiAppOpen();
+      initContactForm();
+      initGalleryDialog();
+      initCurrentYear();
+      secureExternalLinks();
+    });
+
+    // 1. Mobile Menu Functionality
+    function initMobileMenu() {
+      const button = document.querySelector("#menuToggle");
+      const nav = document.querySelector("#primaryNav");
+      if (!button || !nav) return;
+
+      const closeMenu = () => {
+        nav.classList.remove("is-open");
+        button.classList.remove("is-active");
+        button.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("menu-open");
+      };
+
+      button.addEventListener("click", () => {
+        const isOpen = nav.classList.contains("is-open");
+        nav.classList.toggle("is-open", !isOpen);
+        button.classList.toggle("is-active", !isOpen);
+        button.setAttribute("aria-expanded", String(!isOpen));
+        document.body.classList.toggle("menu-open", !isOpen);
+      });
+
+      nav.querySelectorAll('a').forEach((link) => link.addEventListener("click", closeMenu));
+      document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
+    }
+
+    // 2. Header Shadow on Scroll
+    function initHeaderScroll() {
+      const header = document.querySelector(".site-header");
+      if (!header) return;
+      window.addEventListener("scroll", () => {
+        header.classList.toggle("is-scrolled", window.scrollY > 40);
+      }, { passive: true });
+    }
+
+    // 3. Back To Top Button
+    function initBackToTop() {
+      const button = document.querySelector("#backToTop");
+      if (!button) return;
+
+      window.addEventListener("scroll", () => {
+        button.classList.toggle("visible", window.scrollY > 300);
+      }, { passive: true });
+
+      button.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+
+    // 4. Toast Notification Manager
+    function showToast(message) {
+      const toast = document.querySelector("#toast");
+      if (!toast) return;
+      toast.textContent = message;
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 3500);
+    }
+
+    // 5. Interactive Support Buttons (Volunteer, Materials, Events, Donation)
+    function initSupportChoices() {
+      const choices = document.querySelectorAll(".support-choice");
+      const contactBtn = document.querySelector("#supportContact");
+      if (!choices.length || !contactBtn) return;
+
+      const textMap = {
+        volunteer: "Namaste%2C%20main%20Pawansut%20Seva%20Sansthan%20ke%20svayamseva%20karya%20mein%20sahyog%20karna%20chahta%2Fchahti%20hoon.",
+        materials: "Namaste%2C%20main%20Pawansut%20Seva%20Sansthan%20ko%20samagri%20sahyog%20dena%20chahta%2Fchahti%20hoon.",
+        event: "Namaste%2C%20main%20Pawansut%20Seva%20Sansthan%20ke%20aayojan%20mein%20sahyog%20karna%20chahta%2Fchahti%20hoon.",
+        donate: "Namaste%2C%20main%20Pawansut%20Seva%20Sansthan%20ko%20aarthik%20sahyog%20%2F%20daan%20dena%20chahta%2Fchahti%20hoon."
+      };
+
+      choices.forEach(btn => {
+        btn.addEventListener("click", () => {
+          choices.forEach(c => c.classList.remove("active"));
+          btn.classList.add("active");
+          const type = btn.dataset.support;
+          if (type === "donate") {
+            contactBtn.innerHTML = "दान QR कोड देखें / संपर्क करें <span>↗</span>";
+            const qrSec = document.querySelector("#donate-qr");
+            if (qrSec) qrSec.scrollIntoView({ behavior: "smooth" });
+          } else {
+            contactBtn.innerHTML = "संपर्क करके सहयोग करें <span>↗</span>";
+          }
+          if (textMap[type]) {
+            contactBtn.href = `https://wa.me/919096757393?text=${textMap[type]}`;
+          }
+        });
+      });
+    }
+
+    // 6. UPI ID Copy to Clipboard
+    function initUpiCopy() {
+      const copyBtn = document.querySelector("#copyUpiBtn");
+      if (!copyBtn) return;
+      copyBtn.addEventListener("click", () => {
+        const upi = "9096757393@upi";
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(upi).then(() => {
+            showToast("UPI ID कॉपी हो गई: " + upi);
+            copyBtn.textContent = "✓ कॉपी हो गई!";
+            setTimeout(() => { copyBtn.textContent = "📋 UPI ID कॉपी करें"; }, 2500);
+          }).catch(() => {
+            fallbackCopy(upi, copyBtn);
+          });
+        } else {
+          fallbackCopy(upi, copyBtn);
+        }
+      });
+    }
+
+    function fallbackCopy(text, btn) {
+      const temp = document.createElement("input");
+      temp.value = text;
+      document.body.appendChild(temp);
+      temp.select();
+      document.execCommand("copy");
+      document.body.removeChild(temp);
+      showToast("UPI ID कॉपी हो गई: " + text);
+      btn.textContent = "✓ कॉपी हो गई!";
+      setTimeout(() => { btn.textContent = "📋 UPI ID कॉपी करें"; }, 2500);
+    }
+
+    // 7. UPI App Open Handler (Detects Mobile vs Desktop)
+    function initUpiAppOpen() {
+      const upiBtn = document.querySelector("#openUpiBtn");
+      if (!upiBtn) return;
+
+      upiBtn.addEventListener("click", (e) => {
+        const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent) || (window.innerWidth <= 768);
+        const upi = "9096757393@upi";
+
+        if (!isMobile) {
+          e.preventDefault();
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(upi);
+          }
+          showToast("💻 UPI ऐप केवल मोबाइल में काम करता है! UPI ID कॉपी हो गई।");
+          alert("💻 आप कंप्यूटर / लैपटॉप पर हैं!\n\nGoogle Pay, PhonePe, Paytm या BHIM जैसे UPI ऐप्स केवल मोबाइल फ़ोन में होते हैं, कंप्यूटर पर नहीं।\n\n📌 भुगतान के विकल्प:\n1. अपने मोबाइल से सामने दिख रहा QR कोड स्कैन करें।\n2. अथवा UPI ID (" + upi + ") कॉपी हो गई है, इसे किसी भी UPI ऐप में पेस्ट करें।");
+          return;
+        }
+
+        showToast("📱 UPI ऐप खोला जा रहा है...");
+      });
+    }
+
+    // 8. Contact Form Validation & Redirection (Fixed Popup Blocker)
+    function initContactForm() {
+      const form = document.querySelector("#contactForm");
+      if (!form) return;
+
+      const errorBox = form.querySelector("#formError");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (errorBox) errorBox.textContent = "";
+
+        const name = form.querySelector('#visitorName')?.value.trim() || "";
+        const phone = form.querySelector('#visitorPhone')?.value.trim() || "";
+        const topic = form.querySelector('#visitorTopic')?.value.trim() || "";
+        const message = form.querySelector('#visitorMessage')?.value.trim() || "";
+        const consent = form.querySelector("#privacyConsent")?.checked;
+
+        if (name.length < 2) {
+          if (errorBox) errorBox.textContent = "कृपया अपना पूरा नाम लिखें।";
+          return;
+        }
+        if (!topic) {
+          if (errorBox) errorBox.textContent = "कृपया संपर्क का विषय चुनें।";
+          return;
+        }
+        if (message.length < 5) {
+          if (errorBox) errorBox.textContent = "कृपया अपना संदेश लिखें।";
+          return;
+        }
+        if (!consent) {
+          if (errorBox) errorBox.textContent = "आगे बढ़ने के लिए सहमति दें।";
+          return;
+        }
+
+        const text = `नमस्कार, पवनसुत सेवा संस्थान।\n\nनाम: ${name}\nमोबाइल: ${phone || "नहीं दिया गया"}\nविषय: ${topic}\nसंदेश: ${message}`;
+        showToast("WhatsApp संदेश खोला जा रहा है...");
+
+        const waUrl = `https://wa.me/919096757393?text=${encodeURIComponent(text)}`;
+        window.open(waUrl, "_blank", "noopener,noreferrer");
+      });
+    }
+
+    // 9. Multi-Photo Category Album Gallery & Dynamic Loader
+    function initGalleryDialog() {
+      const dialog = document.querySelector("#galleryDialog");
+      const grid = document.querySelector("#galleryGrid");
+      const dialogImg = document.querySelector("#dialogImg");
+      const dialogAlbumBadge = document.querySelector("#dialogAlbumBadge");
+      const dialogAlbumTitle = document.querySelector("#dialogAlbumTitle");
+      const dialogCounter = document.querySelector("#dialogCounter");
+      const dialogPhotoTitle = document.querySelector("#dialogPhotoTitle");
+      const dialogDesc = document.querySelector("#dialogDesc");
+      const dialogThumbnails = document.querySelector("#dialogThumbnails");
+      const dialogPrev = document.querySelector("#dialogPrev");
+      const dialogNext = document.querySelector("#dialogNext");
+
+      // Default fallback albums with actual photo files
+      const defaultAlbums = [
+        {
+          id: "adhyatmik",
+          title: "आध्यात्मिक आयोजन",
+          desc: "श्रीमद्भागवत कथा, ज्ञान यज्ञ एवं सत्संग के पावन आयोजन।",
+          cover: "gallery/1_आध्यात्मिक_आयोजन/आध्यात्मिक आयोजन.jpeg",
+          photos: [
+            { src: "gallery/1_आध्यात्मिक_आयोजन/आध्यात्मिक आयोजन.jpeg", title: "आध्यात्मिक आयोजन - फोटो 1", desc: "पूज्य श्री द्वारा श्रीमद्भागवत कथा एवं सत्संग।" },
+            { src: "gallery/1_आध्यात्मिक_आयोजन/2.jpeg", title: "आध्यात्मिक आयोजन - फोटो 2", desc: "कथा एवं सत्संग के पावन क्षण।" },
+            { src: "gallery/1_आध्यात्मिक_आयोजन/3.jpeg", title: "आध्यात्मिक आयोजन - फोटो 3", desc: "ज्ञान यज्ञ एवं सत्संग का आयोजन।" },
+            { src: "gallery/1_आध्यात्मिक_आयोजन/4.jpeg", title: "आध्यात्मिक आयोजन - फोटो 4", desc: "श्रद्धालुओं की पावन उपस्थिति।" },
+            { src: "gallery/1_आध्यात्मिक_आयोजन/5.jpeg", title: "आध्यात्मिक आयोजन - फोटो 5", desc: "पावन प्रवचन एवं भक्ति रस।" },
+            { src: "gallery/1_आध्यात्मिक_आयोजन/6.jpeg", title: "आध्यात्मिक आयोजन - फोटो 6", desc: "धार्मिक अनुष्ठान एवं पूजन।" },
+            { src: "gallery/1_आध्यात्मिक_आयोजन/7.jpeg", title: "आध्यात्मिक आयोजन - फोटो 7", desc: "सामूहिक सत्संग कार्यक्रम।" },
+            { src: "gallery/1_आध्यात्मिक_आयोजन/8.jpeg", title: "आध्यात्मिक आयोजन - फोटो 8", desc: "कथा व्यास पीठ से अमृत वर्षा।" },
+            { src: "gallery/1_आध्यात्मिक_आयोजन/9.jpeg", title: "आध्यात्मिक आयोजन - फोटो 9", desc: "भक्तिमय वातावरण एवं कीर्तन।" },
+            { src: "gallery/1_आध्यात्मिक_आयोजन/10.jpeg", title: "आध्यात्मिक आयोजन - फोटो 10", desc: "आरती एवं पावन दीपदान।" },
+            { src: "gallery/1_आध्यात्मिक_आयोजन/11.jpeg", title: "आध्यात्मिक आयोजन - फोटो 11", desc: "प्रसाद वितरण एवं आशीर्वाद।" },
+            { src: "gallery/1_आध्यात्मिक_आयोजन/12.jpeg", title: "आध्यात्मिक आयोजन - फोटो 12", desc: "पवनसुत सेवा संस्थान के पावन कार्य एवं गतिविधियाँ।" },
+            { src: "gallery/1_आध्यात्मिक_आयोजन/13.jpeg", title: "आध्यात्मिक आयोजन - फोटो 13", desc: "पवनसुत सेवा संस्थान के पावन कार्य एवं गतिविधियाँ।" },
+            { src: "gallery/1_आध्यात्मिक_आयोजन/14.jpeg", title: "आध्यात्मिक आयोजन - फोटो 14", desc: "पवनसुत सेवा संस्थान के पावन कार्य एवं गतिविधियाँ।" },
+            { src: "gallery/1_आध्यात्मिक_आयोजन/15.jpeg", title: "आध्यात्मिक आयोजन - फोटो 15", desc: "पवनसुत सेवा संस्थान के पावन कार्य एवं गतिविधियाँ।" },
+            { src: "gallery/1_आध्यात्मिक_आयोजन/16.jpeg", title: "आध्यात्मिक आयोजन - फोटो 16", desc: "पवनसुत सेवा संस्थान के पावन कार्य एवं गतिविधियाँ।" },
+            { src: "gallery/1_आध्यात्मिक_आयोजन/17.jpeg", title: "आध्यात्मिक आयोजन - फोटो 17", desc: "पवनसुत सेवा संस्थान के पावन कार्य एवं गतिविधियाँ।" },
+            { src: "gallery/1_आध्यात्मिक_आयोजन/18.jpeg", title: "आध्यात्मिक आयोजन - फोटो 18", desc: "पवनसुत सेवा संस्थान के पावन कार्य एवं गतिविधियाँ।" },
+            { src: "gallery/1_आध्यात्मिक_आयोजन/19.jpeg", title: "आध्यात्मिक आयोजन - फोटो 19", desc: "पवनसुत सेवा संस्थान के पावन कार्य एवं गतिविधियाँ।" },
+            { src: "gallery/1_आध्यात्मिक_आयोजन/20.jpeg", title: "आध्यात्मिक आयोजन - फोटो 20", desc: "पवनसुत सेवा संस्थान के पावन कार्य एवं गतिविधियाँ।" },
+            { src: "gallery/1_आध्यात्मिक_आयोजन/21.jpeg", title: "आध्यात्मिक आयोजन - फोटो 21", desc: "पवनसुत सेवा संस्थान के पावन कार्य एवं गतिविधियाँ।" },
+            { src: "gallery/1_आध्यात्मिक_आयोजन/22.jpeg", title: "आध्यात्मिक आयोजन - फोटो 22", desc: "पवनसुत सेवा संस्थान के पावन कार्य एवं गतिविधियाँ।" }
+          ]
+        },
+        {
+          id: "seva",
+          title: "सेवा का संकल्प",
+          desc: "जरूरतमंदों, असहायों और निर्धन परिवारों के लिए सेवा कार्य।",
+          cover: "gallery/2_सेवा_का_संकल्प/1 सेवा का संकल्प.jpeg",
+          photos: [
+            { src: "gallery/2_सेवा_का_संकल्प/1 सेवा का संकल्प.jpeg", title: "सेवा का संकल्प - फोटो 1", desc: "दीन-दुखियों और जरूरतमंदों की सेवा।" },
+            { src: "gallery/2_सेवा_का_संकल्प/2.jpeg", title: "सेवा का संकल्प - फोटो 2", desc: "राशन व सामग्री सहयोग।" },
+            { src: "gallery/2_सेवा_का_संकल्प/3.jpeg", title: "सेवा का संकल्प - फोटो 3", desc: "निस्वार्थ समाज सेवा के क्षण।" },
+            { src: "gallery/2_सेवा_का_संकल्प/4.jpeg", title: "सेवा का संकल्प - फोटो 4", desc: "सेवा कार्य में समर्पित स्वयंसेवक।" },
+            { src: "gallery/2_सेवा_का_संकल्प/5.jpeg", title: "सेवा का संकल्प - फोटो 5", desc: "पीड़ितों की सहायता में संस्थान।" },
+            { src: "gallery/2_सेवा_का_संकल्प/6.jpeg", title: "सेवा का संकल्प - फोटो 6", desc: "सेवा ही जीवन का संकल्प।" },
+            { src: "gallery/2_सेवा_का_संकल्प/7.jpeg", title: "सेवा का संकल्प - फोटो 7", desc: "jay shree ram।" },
+            { src: "gallery/2_सेवा_का_संकल्प/8.jpeg", title: "सेवा का संकल्प - फोटो 8", desc: "पवनसुत सेवा संस्थान के पावन कार्य एवं गतिविधियाँ।" },
+            { src: "gallery/2_सेवा_का_संकल्प/9.jpeg", title: "सेवा का संकल्प - फोटो 9", desc: "पवनसुत सेवा संस्थान के पावन कार्य एवं गतिविधियाँ।" },
+            { src: "gallery/2_सेवा_का_संकल्प/10.jpeg", title: "सेवा का संकल्प - फोटो 10", desc: "पवनसुत सेवा संस्थान के पावन कार्य एवं गतिविधियाँ।" },
+            { src: "gallery/2_सेवा_का_संकल्प/11.jpeg", title: "सेवा का संकल्प - फोटो 11", desc: "पवनसुत सेवा संस्थान के पावन कार्य एवं गतिविधियाँ।" },
+            { src: "gallery/2_सेवा_का_संकल्प/12.jpeg", title: "सेवा का संकल्प - फोटो 12", desc: "पवनसुत सेवा संस्थान के पावन कार्य एवं गतिविधियाँ।" },
+            { src: "gallery/2_सेवा_का_संकल्प/13.jpeg", title: "सेवा का संकल्प - फोटो 13", desc: "पवनसुत सेवा संस्थान के पावन कार्य एवं गतिविधियाँ।" },
+            { src: "gallery/2_सेवा_का_संकल्प/14.jpeg", title: "सेवा का संकल्प - फोटो 14", desc: "पवनसुत सेवा संस्थान के पावन कार्य एवं गतिविधियाँ।" },
+            { src: "gallery/2_सेवा_का_संकल्प/15.jpeg", title: "सेवा का संकल्प - फोटो 15", desc: "पवनसुत सेवा संस्थान के पावन कार्य एवं गतिविधियाँ।" },
+            { src: "gallery/2_सेवा_का_संकल्प/16.jpeg", title: "सेवा का संकल्प - फोटो 16", desc: "पवनसुत सेवा संस्थान के पावन कार्य एवं गतिविधियाँ।" },
+            { src: "gallery/2_सेवा_का_संकल्प/17.jpeg", title: "सेवा का संकल्प - फोटो 17", desc: "पवनसुत सेवा संस्थान के पावन कार्य एवं गतिविधियाँ।" }
+          ]
+        },
+        {
+          id: "bhakti",
+          title: "भक्ति की संध्या",
+          desc: "सामूहिक संकीर्तन, सुंदरकांड पाठ और दीप प्रज्ज्वलन के पावन पल।",
+          cover: "gallery/3_भक्ति_की_संध्या/1_भक्ति_की_संध्या.jpeg",
+          photos: [
+            { src: "gallery/3_भक्ति_की_संध्या/1_भक्ति_की_संध्या.jpeg", title: "भक्ति की संध्या - फोटो 1", desc: "सामूहिक संकीर्तन, सुंदरकांड पाठ और दीप प्रज्ज्वलन।" }
+          ]
+        }
+      ];
+
+      // Normalize albums data: prefer window.GALLERY_ALBUMS, fallback to defaultAlbums
+      let albums = [];
+      if (typeof window.GALLERY_ALBUMS !== "undefined" && Array.isArray(window.GALLERY_ALBUMS) && window.GALLERY_ALBUMS.length > 0) {
+        albums = window.GALLERY_ALBUMS;
+      } else if (typeof window.GALLERY_IMAGES !== "undefined" && Array.isArray(window.GALLERY_IMAGES) && window.GALLERY_IMAGES.length > 0) {
+        albums = window.GALLERY_IMAGES.map((img, i) => ({
+          id: "album_" + (i + 1),
+          title: img.title || ("झलक " + (i + 1)),
+          desc: img.desc || "पवनसुत सेवा संस्थान",
+          cover: img.src,
+          photos: [{ src: img.src, title: img.title || "फोटो", desc: img.desc || "" }]
+        }));
+      } else {
+        albums = defaultAlbums;
+      }
+
+      // Ensure each album has valid photos array and cover
+      albums.forEach(album => {
+        if (!Array.isArray(album.photos) || album.photos.length === 0) {
+          album.photos = [{ src: album.cover || "Pavansut Seva Emblem.png", title: album.title, desc: album.desc }];
+        }
+        if (!album.cover) {
+          album.cover = album.photos[0].src;
+        }
+      });
+
+      // Render albums into grid
+      if (grid) {
+        grid.innerHTML = albums.map((album, aIdx) => {
+          const photoCount = album.photos.length;
+          return `
+            <div class="gallery-tile" data-album-index="${aIdx}" tabindex="0" role="button" aria-label="${album.title} - ${photoCount} फोटो देखें">
+              <div class="gallery-tile-img-box">
+                <img src="${album.cover}" alt="${album.title}" class="gallery-tile-img" loading="lazy" onerror="this.onerror=null; this.src='Pavansut Seva Emblem.png';">
+                <span class="gallery-tile-badge">📷 ${photoCount} फोटो</span>
+                <div class="gallery-tile-overlay">
+                  <span>🔍 गैलरी खोलें</span>
+                </div>
+              </div>
+              <div class="gallery-tile-info">
+                <strong>${album.title}</strong>
+                <p>${album.desc || "पवनसुत सेवा संस्थान के सेवा एवं आध्यात्मिक कार्यों की झलक।"}</p>
+                <div class="gallery-tile-footer">
+                  <span>गैलरी देखें (${photoCount} फोटो)</span>
+                  <span>→</span>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join("");
+      }
+
+      // Lightbox state
+      let currentAlbumIdx = 0;
+      let currentPhotoIdx = 0;
+
+      function updatePhotoView(photoIdx) {
+        const album = albums[currentAlbumIdx];
+        if (!album || !album.photos || album.photos.length === 0) return;
+
+        // Wrap around index
+        if (photoIdx < 0) photoIdx = album.photos.length - 1;
+        if (photoIdx >= album.photos.length) photoIdx = 0;
+        currentPhotoIdx = photoIdx;
+
+        const photo = album.photos[currentPhotoIdx];
+        const total = album.photos.length;
+
+        // Update dialog text
+        if (dialogAlbumTitle) dialogAlbumTitle.textContent = album.title;
+        if (dialogCounter) dialogCounter.textContent = `फोटो ${currentPhotoIdx + 1} / ${total}`;
+        if (dialogPhotoTitle) dialogPhotoTitle.textContent = photo.title || `${album.title} - फोटो ${currentPhotoIdx + 1}`;
+        if (dialogDesc) dialogDesc.textContent = photo.desc || album.desc || "पवनसुत सेवा संस्थान";
+
+        // Update image directly with fallback
+        if (dialogImg) {
+          dialogImg.alt = photo.title || album.title;
+          dialogImg.src = photo.src;
+          dialogImg.style.opacity = "1";
+        }
+
+        // Update thumbnails active state
+        if (dialogThumbnails) {
+          const thumbs = dialogThumbnails.querySelectorAll(".dialog-thumb-btn");
+          thumbs.forEach((tb, i) => {
+            if (i === currentPhotoIdx) {
+              tb.classList.add("is-active");
+              tb.setAttribute("aria-selected", "true");
+              tb.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+            } else {
+              tb.classList.remove("is-active");
+              tb.setAttribute("aria-selected", "false");
+            }
+          });
+        }
+      }
+
+      function openAlbum(albumIdx, startPhotoIdx = 0) {
+        currentAlbumIdx = albumIdx;
+        currentPhotoIdx = startPhotoIdx;
+        const album = albums[currentAlbumIdx];
+        if (!album || !dialog) return;
+
+        // Render thumbnails for this album
+        if (dialogThumbnails) {
+          dialogThumbnails.innerHTML = album.photos.map((p, idx) => `
+            <button class="dialog-thumb-btn ${idx === currentPhotoIdx ? 'is-active' : ''}" data-photo-index="${idx}" aria-label="फोटो ${idx + 1}" type="button">
+              <img src="${p.src}" alt="${p.title || ''}" loading="lazy" onerror="this.onerror=null; this.src='Pavansut Seva Emblem.png';">
+            </button>
+          `).join("");
+
+          dialogThumbnails.querySelectorAll(".dialog-thumb-btn").forEach(tb => {
+            tb.addEventListener("click", () => {
+              const pIdx = parseInt(tb.dataset.photoIndex, 10);
+              updatePhotoView(pIdx);
+            });
+          });
+        }
+
+        // Show/hide prev/next buttons & thumbnails wrapper if only 1 photo
+        const hasMultiple = album.photos.length > 1;
+        if (dialogPrev) dialogPrev.style.display = hasMultiple ? "flex" : "none";
+        if (dialogNext) dialogNext.style.display = hasMultiple ? "flex" : "none";
+        if (dialogThumbnails && dialogThumbnails.parentElement) {
+          dialogThumbnails.parentElement.style.display = hasMultiple ? "block" : "none";
+        }
+
+        updatePhotoView(currentPhotoIdx);
+
+        try {
+          if (!dialog.open && typeof dialog.showModal === "function") {
+            dialog.showModal();
+          } else {
+            dialog.setAttribute("open", "");
+          }
+        } catch (err) {
+          dialog.setAttribute("open", "");
+        }
+        document.body.classList.add("dialog-open");
+      }
+
+      function closeDialog() {
+        if (!dialog) return;
+        try {
+          if (typeof dialog.close === "function") {
+            dialog.close();
+          }
+        } catch (e) {}
+        dialog.removeAttribute("open");
+        document.body.classList.remove("dialog-open");
+      }
+
+      // Event delegation on grid for clicks and keyboard activation
+      if (grid) {
+        grid.addEventListener("click", (e) => {
+          const tile = e.target.closest(".gallery-tile");
+          if (!tile) return;
+          const aIdx = parseInt(tile.dataset.albumIndex, 10);
+          if (!isNaN(aIdx)) {
+            openAlbum(aIdx, 0);
+          }
+        });
+        grid.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            const tile = e.target.closest(".gallery-tile");
+            if (!tile) return;
+            e.preventDefault();
+            const aIdx = parseInt(tile.dataset.albumIndex, 10);
+            if (!isNaN(aIdx)) {
+              openAlbum(aIdx, 0);
+            }
+          }
+        });
+      }
+
+      // Prev & Next buttons
+      if (dialogPrev) {
+        dialogPrev.addEventListener("click", (e) => {
+          e.stopPropagation();
+          updatePhotoView(currentPhotoIdx - 1);
+        });
+      }
+      if (dialogNext) {
+        dialogNext.addEventListener("click", (e) => {
+          e.stopPropagation();
+          updatePhotoView(currentPhotoIdx + 1);
+        });
+      }
+
+      // Keyboard navigation (Arrow keys & Esc)
+      window.addEventListener("keydown", (e) => {
+        if (!dialog || !dialog.open) return;
+        if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          updatePhotoView(currentPhotoIdx - 1);
+        } else if (e.key === "ArrowRight") {
+          e.preventDefault();
+          updatePhotoView(currentPhotoIdx + 1);
+        } else if (e.key === "Escape") {
+          closeDialog();
+        }
+      });
+
+      // Swipe support for touch screens
+      let touchStartX = 0;
+      let touchEndX = 0;
+      if (dialog) {
+        dialog.addEventListener("touchstart", (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        dialog.addEventListener("touchend", (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          const diff = touchEndX - touchStartX;
+          if (Math.abs(diff) > 40) {
+            if (diff > 0) {
+              updatePhotoView(currentPhotoIdx - 1); // Swiped right -> prev
+            } else {
+              updatePhotoView(currentPhotoIdx + 1); // Swiped left -> next
+            }
+          }
+        }, { passive: true });
+      }
+
+      // Dialog Close Handlers
+      if (dialog) {
+        dialog.addEventListener("click", (e) => {
+          const rect = dialog.getBoundingClientRect();
+          const isInDialog = (
+            rect.top <= e.clientY &&
+            e.clientY <= rect.top + rect.height &&
+            rect.left <= e.clientX &&
+            e.clientX <= rect.left + rect.width
+          );
+          if (!isInDialog) closeDialog();
+        });
+
+        dialog.addEventListener("close", () => {
+          document.body.classList.remove("dialog-open");
+        });
+        dialog.addEventListener("cancel", () => {
+          document.body.classList.remove("dialog-open");
+        });
+
+        document.querySelector("#dialogClose")?.addEventListener("click", closeDialog);
+        document.querySelector("#dialogOk")?.addEventListener("click", closeDialog);
+      }
+    }
+
+    // 10. Footer Year Auto Update
+    function initCurrentYear() {
+      const yearEl = document.querySelector("#currentYear");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    }
+
+    // 11. External Links Security Attribute
+    function secureExternalLinks() {
+      document.querySelectorAll('a[target="_blank"]').forEach(link => {
+        link.setAttribute("rel", "noopener noreferrer");
+      });
+    }
+  </script>
+</body>
+</html>
